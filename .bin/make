@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd $(dirname $0)/..
+
+IMAGE=fortyseveneffects/avr-builder:latest
+
+docker run --rm -it -v $(pwd):/src -v $(pwd)/build:/build -w /build $IMAGE make $@

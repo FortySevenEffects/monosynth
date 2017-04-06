@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "todo: Implement upload with avrdude (must be installed on host machine)."
