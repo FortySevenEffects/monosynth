@@ -1,0 +1,9 @@
+[submodule "libraries/cake"]
+	path = libraries/cake
+	url = https://github.com/FortySevenEffects/cake.git
+[submodule "libraries/midi/arduino-midi-library"]
+	path = libraries/midi/arduino-midi-library
+	url = https://github.com/FortySevenEffects/arduino_midi_library.git
+[submodule "builder"]
+	path = builder
+	url = https://github.com/FortySevenEffects/avr-builder.git
