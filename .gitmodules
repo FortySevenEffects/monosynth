@@ -7,3 +7,6 @@
 [submodule "builder"]
 	path = builder
 	url = https://github.com/FortySevenEffects/avr-builder.git
+[submodule "libraries/pco"]
+	path = libraries/pco
+	url = https://github.com/FortySevenEffects/pco.git
