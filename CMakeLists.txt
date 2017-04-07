@@ -5,7 +5,7 @@ project(monosynth CXX)
 # --
 
 add_subdirectory(builder)
-setup_builder()
+setup_avr_builder(atmega32u4 16) # Arduino Leonardo
 
 # --
 
