@@ -3,8 +3,6 @@
 #include "monosynth-core.h"
 #include "monosynth-core_Defs.h"
 #include "monosynth-core_PinMapping.h"
-#include "monosynth-core_SpiDriver.h"
-#include "monosynth-core_Renderer.h"
 #include <MIDI.h>
 #include <SimpleSynth/noteList.h>
 #include <cake_Assert.h>
@@ -24,11 +22,8 @@ public:
 public: // Interrupt handlers
     enum
     {
-        rx0 = 0,
-        tx0,
-        rx1,
+        rx1 = 0,
         tx1,
-        spi
     };
 
     template<int Interrupt>
@@ -46,21 +41,18 @@ private:
     inline void initApplication();
 
 private:
-    static inline void printDebugChar(char inChar);
+    // static inline void printDebugChar(char inChar);
 
 private:
-    typedef midi::MidiInterface<MidiUart>   MidiInterface;
-    typedef MidiNoteList<Defs::sNumLeds>    NoteBuffer;
-    typedef LedFrameBuffer<Defs::sNumLeds>  FrameBuffer;
+    typedef midi::MidiInterface<MidiUart>       MidiInterface;
+    typedef MidiNoteList<Defs::sNoteBufferSize> NoteBuffer;
 
 private: // Interfaces
     MidiUart    mMidiUart;
-    DebugUart   mDebugUart;
 
 private: // Models
     MidiInterface   mMidi;
     NoteBuffer      mNoteBuffer;
-    FrameBuffer     mFrameBuffer;
 };
 
 extern Engine sEngine;
